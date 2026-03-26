@@ -1,0 +1,12 @@
+{
+  "domain": "honey_instruments",
+  "name": "Honey Instruments",
+  "codeowners": [],
+  "config_flow": true,
+  "documentation": "https://cloud.honeyinstruments.com/doc/README_REST_API.pdf",
+  "integration_type": "hub",
+  "iot_class": "cloud_polling",
+  "loggers": ["custom_components.honey_instruments"],
+  "requirements": [],
+  "version": "1.0.0"
+}

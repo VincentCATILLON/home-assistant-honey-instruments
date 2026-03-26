@@ -1,0 +1,75 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to Honey Instruments",
+        "description": "Enter your Honey Instruments account credentials.",
+        "data": {
+          "email": "Email",
+          "password": "Password"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Re-authenticate Honey Instruments",
+        "description": "Your session has expired. Please enter your password to reconnect.",
+        "data": {
+          "password": "Password"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Invalid email or password.",
+      "cannot_connect": "Unable to connect to Honey Instruments API.",
+      "unknown": "An unexpected error occurred."
+    },
+    "abort": {
+      "already_configured": "This account is already configured.",
+      "reauth_successful": "Re-authentication successful."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Honey Instruments Options",
+        "description": "Configure the integration settings.",
+        "data": {
+          "scan_interval": "Scan interval (seconds)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "weight": {
+        "name": "Weight"
+      },
+      "weight_var_1h": {
+        "name": "Weight variation (1h)"
+      },
+      "weight_var_24h": {
+        "name": "Weight variation (24h)"
+      },
+      "weight_var_7d": {
+        "name": "Weight variation (7d)"
+      },
+      "temperature": {
+        "name": "Temperature"
+      },
+      "battery_voltage": {
+        "name": "Battery voltage"
+      },
+      "signal": {
+        "name": "Signal strength"
+      },
+      "sensor_temperature": {
+        "name": "Sensor temperature"
+      },
+      "sensor_hygrometry": {
+        "name": "Sensor humidity"
+      },
+      "sensor_battery_voltage": {
+        "name": "Sensor battery voltage"
+      }
+    }
+  }
+}
