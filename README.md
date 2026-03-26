@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="custom_components/honey_instruments/res/logo.png" alt="Honey Instruments" width="384">
+  <img src="https://raw.githubusercontent.com/VincentCATILLON/home-assistant-honey-instruments/refs/heads/main/custom_components/honey_instruments/brand/logo.png" alt="Honey Instruments" width="384">
 </p>
 
 # Honey Instruments Integration for Home Assistant
