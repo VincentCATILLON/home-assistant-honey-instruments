@@ -4,9 +4,9 @@
 
 # Honey Instruments Integration for Home Assistant
 
-[![HACS Action](https://github.com/mock3t/home-assistant-honey-instruments/actions/workflows/hacs.yaml/badge.svg)](https://github.com/mock3t/home-assistant-honey-instruments/actions/workflows/hacs.yaml)
-[![Validate with hassfest](https://github.com/mock3t/home-assistant-honey-instruments/actions/workflows/hassfest.yaml/badge.svg)](https://github.com/mock3t/home-assistant-honey-instruments/actions/workflows/hassfest.yaml)
-[![Ruff](https://github.com/mock3t/home-assistant-honey-instruments/actions/workflows/ruff.yaml/badge.svg)](https://github.com/mock3t/home-assistant-honey-instruments/actions/workflows/ruff.yaml)
+[![HACS Action](https://github.com/vincentcatillon/home-assistant-honey-instruments/actions/workflows/hacs.yaml/badge.svg)](https://github.com/vincentcatillon/home-assistant-honey-instruments/actions/workflows/hacs.yaml)
+[![Validate with hassfest](https://github.com/vincentcatillon/home-assistant-honey-instruments/actions/workflows/hassfest.yaml/badge.svg)](https://github.com/vincentcatillon/home-assistant-honey-instruments/actions/workflows/hassfest.yaml)
+[![Ruff](https://github.com/vincentcatillon/home-assistant-honey-instruments/actions/workflows/ruff.yaml/badge.svg)](https://github.com/vincentcatillon/home-assistant-honey-instruments/actions/workflows/ruff.yaml)
 
 Custom integration for [Home Assistant](https://www.home-assistant.io/) to retrieve data from [Honey Instruments](https://www.honeyinstruments.com/) connected beehive scales.
 
@@ -33,6 +33,10 @@ Custom integration for [Home Assistant](https://www.home-assistant.io/) to retri
 ## Installation
 
 ### HACS (recommended)
+
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=VincentCATILLON&repository=home-assistant-honey-instruments&category=integration)
+
+Or manually:
 
 1. Open HACS in your Home Assistant instance
 2. Click the three dots in the top right corner and select **Custom repositories**
