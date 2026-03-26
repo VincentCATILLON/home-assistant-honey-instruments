@@ -1,3 +1,5 @@
+"""Config flow for Honey Instruments."""
+
 from __future__ import annotations
 
 from typing import Any
@@ -150,6 +152,7 @@ class HoneyInstrumentsOptionsFlow(OptionsFlow):
     """Options flow for Honey Instruments."""
 
     def __init__(self, config_entry: ConfigEntry) -> None:
+        """Initialize options flow."""
         self._config_entry = config_entry
 
     async def async_step_init(

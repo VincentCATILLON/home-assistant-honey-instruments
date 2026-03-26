@@ -1,3 +1,5 @@
+"""Base entity for Honey Instruments."""
+
 from __future__ import annotations
 
 from typing import Any
@@ -20,6 +22,7 @@ class HoneyInstrumentsEntity(CoordinatorEntity[HoneyInstrumentsCoordinator]):
         device_id: int,
         device_info_raw: dict[str, Any],
     ) -> None:
+        """Initialize the base entity."""
         super().__init__(coordinator)
         self._device_id = device_id
 

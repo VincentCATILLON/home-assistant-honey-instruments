@@ -1,3 +1,5 @@
+"""Constants for Honey Instruments."""
+
 from logging import Logger, getLogger
 
 from homeassistant.const import Platform

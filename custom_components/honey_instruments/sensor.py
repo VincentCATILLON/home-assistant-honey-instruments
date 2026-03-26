@@ -1,3 +1,5 @@
+"""Sensor platform for Honey Instruments."""
+
 from __future__ import annotations
 
 from collections.abc import Callable
@@ -151,6 +153,7 @@ class HoneyInstrumentsSensor(HoneyInstrumentsEntity, SensorEntity):
         device_id: int,
         device_info_raw: dict[str, Any],
     ) -> None:
+        """Initialize the sensor."""
         super().__init__(coordinator, device_id, device_info_raw)
         self.entity_description = description
         self._attr_unique_id = f"{device_id}_{description.key}"

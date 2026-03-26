@@ -1,3 +1,5 @@
+"""API client for Honey Instruments."""
+
 from __future__ import annotations
 
 import logging
@@ -28,6 +30,7 @@ class HoneyInstrumentsApi:
         password: str,
         access_token: str | None = None,
     ) -> None:
+        """Initialize the API client."""
         self._session = session
         self._email = email
         self._password = password
@@ -35,6 +38,7 @@ class HoneyInstrumentsApi:
 
     @property
     def access_token(self) -> str | None:
+        """Return the current access token."""
         return self._access_token
 
     async def authenticate(self) -> str:

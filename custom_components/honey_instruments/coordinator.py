@@ -26,6 +26,7 @@ class HoneyInstrumentsCoordinator(DataUpdateCoordinator[dict[int, dict[str, Any]
         api: HoneyInstrumentsApi,
         scan_interval: int = DEFAULT_SCAN_INTERVAL,
     ) -> None:
+        """Initialize the coordinator."""
         super().__init__(
             hass,
             LOGGER,
