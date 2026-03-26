@@ -1,12 +1,11 @@
 {
   "domain": "honey_instruments",
   "name": "Honey Instruments",
-  "codeowners": [],
+  "codeowners": ["@VincentCATILLON"],
   "config_flow": true,
-  "documentation": "https://cloud.honeyinstruments.com/doc/README_REST_API.pdf",
+  "documentation": "https://github.com/VincentCATILLON/home-assistant-honey-instruments",
   "integration_type": "hub",
   "iot_class": "cloud_polling",
-  "loggers": ["custom_components.honey_instruments"],
-  "requirements": [],
-  "version": "1.0.0"
+  "issue_tracker": "https://github.com/VincentCATILLON/home-assistant-honey-instruments/issues",
+  "version": "v1.0.0"
 }
