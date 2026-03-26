@@ -1,0 +1,27 @@
+name: Lint
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  ruff-check:
+    name: Ruff check
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: "actions/checkout@v4"
+      - uses: "astral-sh/ruff-action@v3"
+        with:
+          args: "check custom_components/"
+
+  ruff-format:
+    name: Ruff format
+    runs-on: "ubuntu-latest"
+    steps:
+      - uses: "actions/checkout@v4"
+      - uses: "astral-sh/ruff-action@v3"
+        with:
+          args: "format --check custom_components/"

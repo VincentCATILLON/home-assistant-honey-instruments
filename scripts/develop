@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+# Activate venv if present (local dev outside devcontainer)
+if [[ -d "venv" ]]; then
+    source venv/bin/activate
+fi
+
+# Check that hass is available
+if ! command -v hass &> /dev/null; then
+    echo "Error: 'hass' command not found."
+    echo "Run 'scripts/setup' first to create the virtual environment and install Home Assistant."
+    exit 1
+fi
+
+# Create config dir if not present
+if [[ ! -d "${PWD}/config" ]]; then
+    mkdir -p "${PWD}/config"
+    hass --config "${PWD}/config" --script ensure_config
+fi
+
+# Set the path to custom_components
+export PYTHONPATH="${PYTHONPATH}:${PWD}/custom_components"
+
+# Start Home Assistant
+hass --config "${PWD}/config" --debug

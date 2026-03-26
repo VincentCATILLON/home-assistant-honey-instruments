@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+set -e
+
+cd "$(dirname "$0")/.."
+
+# Activate venv if present
+if [[ -d "venv" ]]; then
+    source venv/bin/activate
+fi
+
+# Check that ruff is available
+if ! command -v ruff &> /dev/null; then
+    echo "Error: 'ruff' command not found."
+    echo "Run 'scripts/setup' first, or install ruff: pip install ruff"
+    exit 1
+fi
+
+echo "Running ruff check..."
+ruff check custom_components/
+
+echo "Running ruff format check..."
+ruff format --check custom_components/
+
+echo ""
+echo "All checks passed!"
