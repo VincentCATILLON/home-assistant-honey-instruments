@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="icon.png" alt="Honey Instruments" width="128">
+  <img src="custom_components/honey_instruments/res/logo.png" alt="Honey Instruments" width="384">
 </p>
 
 # Honey Instruments Integration for Home Assistant
