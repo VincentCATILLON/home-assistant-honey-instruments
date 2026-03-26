@@ -43,13 +43,13 @@
       "weight": {
         "name": "Poids"
       },
-      "weight_var_1h": {
+      "weight_variation_1h": {
         "name": "Variation de poids (1h)"
       },
-      "weight_var_24h": {
+      "weight_variation_24h": {
         "name": "Variation de poids (24h)"
       },
-      "weight_var_7d": {
+      "weight_variation_7d": {
         "name": "Variation de poids (7j)"
       },
       "temperature": {
@@ -58,17 +58,17 @@
       "battery_voltage": {
         "name": "Tension batterie"
       },
-      "signal": {
+      "signal_strength": {
         "name": "Force du signal"
       },
-      "sensor_temperature": {
-        "name": "Température capteur"
+      "external_temperature": {
+        "name": "Température externe"
       },
-      "sensor_hygrometry": {
-        "name": "Humidité capteur"
+      "external_humidity": {
+        "name": "Humidité externe"
       },
-      "sensor_battery_voltage": {
-        "name": "Tension batterie capteur"
+      "external_battery_voltage": {
+        "name": "Tension batterie externe"
       }
     }
   }
