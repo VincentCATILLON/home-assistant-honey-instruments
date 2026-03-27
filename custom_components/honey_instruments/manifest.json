@@ -7,5 +7,5 @@
   "integration_type": "hub",
   "iot_class": "cloud_polling",
   "issue_tracker": "https://github.com/VincentCATILLON/home-assistant-honey-instruments/issues",
-  "version": "v1.0.0"
+  "version": "v1.0.1"
 }

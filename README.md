@@ -18,12 +18,12 @@ Custom integration for [Home Assistant](https://www.home-assistant.io/) to retri
 | Weight variation (1h) | Weight | kg | Weight change over the last hour |
 | Weight variation (24h) | Weight | kg | Weight change over the last 24 hours |
 | Weight variation (7d) | Weight | kg | Weight change over the last 7 days |
-| Temperature | Temperature | °C | Balance temperature |
-| Battery voltage | Voltage | mV | Balance battery level |
-| Signal strength | Signal | dB | Communication signal strength |
+| Internal humidity | Humidity | % | Internal probe humidity |
+| Internal temperature | Temperature | °C | Internal hive temperature |
 | External temperature | Temperature | °C | External probe temperature |
-| External humidity | Humidity | % | External probe humidity |
-| External battery voltage | Voltage | mV | External probe battery level |
+| Balance battery voltage | Voltage | mV | Balance battery level |
+| Sensor battery voltage | Voltage | mV | Sensor probe battery level |
+| Signal strength | Signal | dB | Communication signal strength |
 
 ## Prerequisites
 

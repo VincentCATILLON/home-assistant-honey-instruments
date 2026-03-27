@@ -52,11 +52,11 @@
       "weight_variation_7d": {
         "name": "Variation de poids (7j)"
       },
-      "temperature": {
-        "name": "Température"
+      "internal_temperature": {
+        "name": "Température interne"
       },
-      "battery_voltage": {
-        "name": "Tension batterie"
+      "sensor_battery_voltage": {
+        "name": "Tension batterie capteur"
       },
       "signal_strength": {
         "name": "Force du signal"
@@ -64,11 +64,11 @@
       "external_temperature": {
         "name": "Température externe"
       },
-      "external_humidity": {
-        "name": "Humidité externe"
+      "internal_humidity": {
+        "name": "Humidité interne"
       },
-      "external_battery_voltage": {
-        "name": "Tension batterie externe"
+      "balance_battery_voltage": {
+        "name": "Tension batterie balance"
       }
     }
   }
