@@ -34,6 +34,7 @@ Custom integration for [Home Assistant](https://www.home-assistant.io/) to retri
 
 1. A Honey Instruments connected beehive scale
 2. Your Honey Instruments account credentials (email + password)
+3. Enable **Service API** on your account at [cloud.honeyinstruments.com/account/services](https://cloud.honeyinstruments.com/account/services)
 
 ## Installation
 
