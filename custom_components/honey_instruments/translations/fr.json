@@ -69,6 +69,21 @@
       },
       "balance_battery_voltage": {
         "name": "Tension batterie balance"
+      },
+      "last_update": {
+        "name": "Dernière mise à jour"
+      },
+      "latitude": {
+        "name": "Latitude"
+      },
+      "longitude": {
+        "name": "Longitude"
+      },
+      "version": {
+        "name": "Version"
+      },
+      "status": {
+        "name": "Statut"
       }
     }
   }

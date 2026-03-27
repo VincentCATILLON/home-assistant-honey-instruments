@@ -69,6 +69,21 @@
       },
       "balance_battery_voltage": {
         "name": "Balance battery voltage"
+      },
+      "last_update": {
+        "name": "Last update"
+      },
+      "latitude": {
+        "name": "Latitude"
+      },
+      "longitude": {
+        "name": "Longitude"
+      },
+      "version": {
+        "name": "Version"
+      },
+      "status": {
+        "name": "Status"
       }
     }
   }

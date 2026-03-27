@@ -24,6 +24,11 @@ Custom integration for [Home Assistant](https://www.home-assistant.io/) to retri
 | Balance battery voltage | Voltage | mV | Balance battery level |
 | Sensor battery voltage | Voltage | mV | Sensor probe battery level |
 | Signal strength | Signal | dB | Communication signal strength |
+| Last update | Timestamp | | Last data update from the device |
+| Latitude | Diagnostic | | Device latitude |
+| Longitude | Diagnostic | | Device longitude |
+| Version | Diagnostic | Sigfox, LoRa, Satellite | Connection type |
+| Status | Diagnostic | Sigfox, LoRa, Satellite | Device status |
 
 ## Prerequisites
 

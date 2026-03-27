@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from collections.abc import Callable
 from dataclasses import dataclass
+from datetime import UTC, datetime
 from typing import Any
 
 from homeassistant.components.sensor import (
@@ -15,6 +16,7 @@ from homeassistant.components.sensor import (
 from homeassistant.const import (
     PERCENTAGE,
     SIGNAL_STRENGTH_DECIBELS,
+    EntityCategory,
     UnitOfElectricPotential,
     UnitOfMass,
     UnitOfTemperature,
@@ -32,6 +34,7 @@ class HoneyInstrumentsSensorDescription(SensorEntityDescription):
     """Describe a Honey Instruments sensor."""
 
     value_fn: Callable[[dict[str, Any]], Any]
+    source: str = "data"
 
 
 SENSOR_DESCRIPTIONS: tuple[HoneyInstrumentsSensorDescription, ...] = (
@@ -95,6 +98,7 @@ SENSOR_DESCRIPTIONS: tuple[HoneyInstrumentsSensorDescription, ...] = (
         key="balance_battery_voltage",
         translation_key="balance_battery_voltage",
         native_unit_of_measurement=UnitOfElectricPotential.MILLIVOLT,
+        entity_category=EntityCategory.DIAGNOSTIC,
         device_class=SensorDeviceClass.VOLTAGE,
         state_class=SensorStateClass.MEASUREMENT,
         value_fn=lambda d: d.get("batVoltage"),
@@ -103,6 +107,7 @@ SENSOR_DESCRIPTIONS: tuple[HoneyInstrumentsSensorDescription, ...] = (
         key="sensor_battery_voltage",
         translation_key="sensor_battery_voltage",
         native_unit_of_measurement=UnitOfElectricPotential.MILLIVOLT,
+        entity_category=EntityCategory.DIAGNOSTIC,
         device_class=SensorDeviceClass.VOLTAGE,
         state_class=SensorStateClass.MEASUREMENT,
         value_fn=lambda d: (d.get("sensor") or {}).get("batVoltage"),
@@ -114,6 +119,50 @@ SENSOR_DESCRIPTIONS: tuple[HoneyInstrumentsSensorDescription, ...] = (
         device_class=SensorDeviceClass.SIGNAL_STRENGTH,
         state_class=SensorStateClass.MEASUREMENT,
         value_fn=lambda d: d.get("signal"),
+    ),
+    HoneyInstrumentsSensorDescription(
+        key="last_update",
+        translation_key="last_update",
+        entity_category=EntityCategory.DIAGNOSTIC,
+        device_class=SensorDeviceClass.TIMESTAMP,
+        value_fn=lambda d: datetime.fromtimestamp(d.get("lastUpdate"), tz=UTC),
+        source="device",
+    ),
+    HoneyInstrumentsSensorDescription(
+        key="latitude",
+        translation_key="latitude",
+        entity_category=EntityCategory.DIAGNOSTIC,
+        value_fn=lambda d: d.get("latitude") or d.get("lat"),
+        source="device",
+    ),
+    HoneyInstrumentsSensorDescription(
+        key="longitude",
+        translation_key="longitude",
+        entity_category=EntityCategory.DIAGNOSTIC,
+        value_fn=lambda d: d.get("lng"),
+        source="device",
+    ),
+    HoneyInstrumentsSensorDescription(
+        key="version",
+        translation_key="version",
+        entity_category=EntityCategory.DIAGNOSTIC,
+        device_class=SensorDeviceClass.ENUM,
+        options=["Sigfox", "LoRa", "Satellite"],
+        value_fn=lambda d: {0: "Sigfox", 1: "LoRa", 2: "Satellite"}.get(
+            d.get("version")
+        ),
+        source="device",
+    ),
+    HoneyInstrumentsSensorDescription(
+        key="status",
+        translation_key="status",
+        entity_category=EntityCategory.DIAGNOSTIC,
+        device_class=SensorDeviceClass.ENUM,
+        options=["Sigfox", "LoRa", "Satellite"],
+        value_fn=lambda d: {0: "Sigfox", 1: "LoRa", 2: "Satellite"}.get(
+            d.get("status")
+        ),
+        source="device",
     ),
 )
 
@@ -159,9 +208,10 @@ class HoneyInstrumentsSensor(HoneyInstrumentsEntity, SensorEntity):
         self._attr_unique_id = f"{device_id}_{description.key}"
 
     @property
-    def native_value(self) -> float | None:
+    def native_value(self) -> Any:
         """Return the sensor value from the coordinator data."""
         device_entry = self.coordinator.data.get(self._device_id)
         if not device_entry:
             return None
-        return self.entity_description.value_fn(device_entry.get("data", {}))
+        source = self.entity_description.source
+        return self.entity_description.value_fn(device_entry.get(source, {}))
